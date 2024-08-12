@@ -1,0 +1,30 @@
+<!-- views/edit.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit <%= product.name %>
+    </title>
+</head>
+
+<body>
+    <h1>Edit <%= product.name %>
+    </h1>
+    <form action="/products/<%= product.id %>?_method=PUT" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="<%= product.name %>">
+        <br>
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price" value="<%= product.price %>">
+        <br>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description"><%= product.description %></textarea>
+        <br>
+        <button type="submit">Update Product</button>
+    </form>
+    <a href="/">Back to Products</a>
+</body>
+
+</html>
